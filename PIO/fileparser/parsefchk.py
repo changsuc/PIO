@@ -66,19 +66,19 @@ def parse_fchk(filename):
         assert c.shape == (dim_mo, dim_bs)
     
     if dim_mo < dim_bs:
-        print 'Warning! Truncated dimension of orbitals detected.'
+        print('Warning! Truncated dimension of orbitals detected.')
     
     return {'data': data, 'text': text}
 
 if __name__ == '__main__':
     fchk = parse_fchk(sys.argv[1])
     for e in fchk['data']['energy']:
-        print e.shape
+        print(e.shape)
     for c in fchk['data']['coeff']:
-        print c.shape
-    print fchk['data']['dim']
-    for k, v in fchk['text'].items():
-        print k
-        if raw_input() == 'y':
-            print v
+        print(c.shape)
+    print(fchk['data']['dim'])
+    for k, v in list(fchk['text'].items()):
+        print(k)
+        if input() == 'y':
+            print(v)
 

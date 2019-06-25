@@ -13,9 +13,9 @@ def gen_fchk(mfn, data, ofn='', title=None, suffix='_rlo', overwrite=False):
         t, ext = os.path.splitext(mfn)
         ofn = t + suffix + ext
     if not overwrite and os.path.exists(ofn):
-        overwriteflag = raw_input('Overwrite file %s? Y/N ' % ofn)
+        overwriteflag = input('Overwrite file %s? Y/N ' % ofn)
         if overwriteflag.lower() != 'y':
-            print ofn, 'skipped.'
+            print(ofn, 'skipped.')
             return False
     title = title or os.path.splitext(ofn)[0]
     
@@ -45,7 +45,7 @@ def gen_fchk(mfn, data, ofn='', title=None, suffix='_rlo', overwrite=False):
         text['energy'][0] = text['energy'][0].replace(str(dim_mo), str(dim_nmo))
         text['coeff'][0] = text['coeff'][0].replace(str(dim_mo*dim_bs), str(dim_nmo*dim_bs))
     if len(data['energy']) != len(text['energy']):
-        print 'Warning: Spin symmetry not match!'
+        print('Warning: Spin symmetry not match!')
     amoeline = text['energy'][0]
     bmoeline = amoeline.replace('Alpha Orbital Energies', 'Beta Orbital Energies ')
     text['energy'] = [amoeline, bmoeline]

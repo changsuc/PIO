@@ -45,10 +45,10 @@ def rev_parse_index(l):
 
 def test():
     while True:
-        s = raw_input()
+        s = input()
         if not s:
             break
-        print parse_index(s)
+        print(parse_index(s))
 
 def test2():
     # while True:
@@ -64,10 +64,10 @@ def test2():
         try:
             assert parse_index(rev_parse_index(l)) == sorted(list(set(l)))
         except AssertionError:
-            print l
-            print rev_parse_index(l)
-            print parse_index(rev_parse_index(l))
-            print sorted(list(set(l)))
+            print(l)
+            print(rev_parse_index(l))
+            print(parse_index(rev_parse_index(l)))
+            print(sorted(list(set(l))))
             break
 
 if __name__ == '__main__':

@@ -31,9 +31,10 @@ def tri2square(tri, dim = None):
     return square
 
 def parse_49(filename):
+    data = None
     with open(filename) as f:
         text = f.read().splitlines()
-    print text[0]
+    print(text[0])
     cuts = []
     for k, line in enumerate(text):
         if re.match(r'^ -+$', line):
@@ -50,9 +51,10 @@ def parse_49(filename):
         data_text = []
         flag_spin = False
         for k, line in enumerate(sec):
+            #print(k)
             if k < 3:
                 continue
-            if re.match(r'^(alpha|beta ) spin$', line.strip()):
+            if re.match(r'^(ALPHA|BETA ) SPIN$', line.strip()):
                 flag_spin = True
                 continue
             if re.match(r'^( +-?\d+\.\d+){,5}$', line):
@@ -89,7 +91,9 @@ def parse_49(filename):
             else:
                 d[''.join(m.groups())+'_labeltext'] = label_text
         else:
-            print type, data.shape
+            print(type, data.shape)
+        d['flag_spin'] = flag_spin
+        d['fn49'] = filename
     return d
 
 class NaturalAtomicOrbital(AtomicOrbital):
