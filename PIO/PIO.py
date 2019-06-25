@@ -1,4 +1,3 @@
-#! /home/caocs/anaconda3/bin/python3.6
 import os, sys
 import re
 import numpy as np
