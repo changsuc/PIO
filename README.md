@@ -3,9 +3,9 @@ Principal Interacting Orbital
 
 Requirement
 ---
-- Gaussian 09
+- Gaussian 09/16
 - NBO 6.0
-- Python 2.7
+- Python 3.6
 - Numpy 1.13.1
 
 The combination here has been well-tested. Other versions are not guaranteed to work but are welcomed to test.
@@ -67,7 +67,7 @@ Tutorial
     Two groups of atom IDs should be input here separated by a space. Numbers in each group are separated by a comma. Hyphen is supported for sequential numbers. Atom numbering starts from 1. Complete fragmentation is always recommended (i.e. the specified two groups cover all the atoms present in the system). Incomplete fragmentation will lead to absence of mathematical elegance but is still meaningful if you really want to do it.
 
     **Output**
-    - *FILENAME_pio.txt*
+     *FILENAME_pio.txt*
         PIO log file, containing basic information of the PIOs of the system subject to the input fragmentation
     - *FILENAME_pio.FChk*
         Gaussian FormCheck file containing PIOs labeled as in the txt file, could be visualized by GaussView and other compatable orbital visualization softwares
@@ -82,8 +82,8 @@ DOI:10.1002/chem.201801220
 
 TODO
 ---
-- [ ] Upgrade the code to make it compatable with spin-polarized systems (coming soon)
-- [ ] Transplant to python 3
+- [x] Upgrade the code to make it compatable with spin-polarized systems (coming soon)
+- [x] Transplant to python 3
 
 Disclaimer
 ---
